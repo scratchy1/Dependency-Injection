@@ -1,0 +1,15 @@
+/* Bei der Setter injection wird die Variable, die die Abhängigkeit darstellt,
+   separat, eben durch einen Setter, mit einem Objekt versorgt (die Injektion).
+   Der entsprechende client-sei-tige Code sieht in etwa so aus:*/
+
+class Client {
+ IServer server; 
+  void setServer(IServer aServer) {
+   server = aServer; }
+   …  }
+   /* Der offensichtliche Nachteil ist, dass der Aufruf vergessen werden kann (was dann zu einer Null-pointer-Exception führen kann).
+   Er kann aber auch, anders als bei der Constructor in-jection, mehrfach ausgeführt werden,
+   wodurch sich die Abhängigkeit im Laufe der Lebens-zeit des Clients ändern kann; die Zahl der Fälle,
+   in denen das sinnvoll ist, hält sich aber in Grenzen.
+   
+   
