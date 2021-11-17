@@ -1,0 +1,6 @@
+class Client {
+ IServer server;
+ Client(IServer aServer) {
+  server = aServer;  … 
+  } …  
+ }
