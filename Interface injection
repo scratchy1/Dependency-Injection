@@ -1,0 +1,14 @@
+/*Bei der Interface injection schließlich wird die Methode, mittels derer die Abhängigkeit injiziert werden soll, durch ein entsprechendes Interface vorgeschrieben, das die Client-Klasse implementieren muss. Dies kann eine Setter-Methode wie bei der Setter injection sein, die Methode kann aber auch beliebig anders heißen.
+In der Regel wird sie jedoch nicht viel mehr tun, als eben diese Abhängigkeit durch die Zuweisung ihres formalen Parameters an das jeweilige Feld herzustellen:*/
+
+interface ServerInjected {
+ void injectServer(IServer aServer);}
+class Client implements ServerInjected {
+ IServer server;
+ void injectServer(IServer aServer) {
+  server = aServer;}
+  …  }
+  
+  /* Insofern bleibt zur Setter injection nur der Unterschied,
+  dass die Assembler-Klasse zur Her-stellung der Abhängigkeit nicht die Client-Klasse selbst kennen muss,
+  sondern nur das zur Herstellung der Abhängigkeit benötigte Interface.*/
