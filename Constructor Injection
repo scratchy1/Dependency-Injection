@@ -4,3 +4,8 @@ class Client {
   server = aServer;  … 
   } …  
  }
+/*Die Constructor injection bietet sich insbesondere dann an, wenn die Abhängigkeit schon vorher im Konstruktor hergestellt wurde.
+Allgemein setzt die Constructor injection jedoch voraus, dass das Objekt, zu dem eine Ab-hängigkeit besteht, schon existiert und bestimmt ist,
+bevor das abhängige Objekt erzeugt wird. Das ist jedoch längst nicht immer der Fall (man denke nur an zirkuläre Abhängigkei-ten).
+Außerdem wächst mit der Anzahl der Abhängigkeiten die Anzahl der Parameter eines Konstruktors,
+was insbesondere dann unschön ist, wenn es mehrere Konstruktoren einer Klasse gibt. All diese Nachteile werden durch die sog. Setter injection vermieden.*/
